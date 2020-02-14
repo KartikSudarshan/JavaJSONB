@@ -5,6 +5,7 @@ import javax.json.bind.config.PropertyNamingStrategy;
 import javax.json.bind.config.PropertyOrderStrategy;
 
 import com.app.custom.CustomerNamingStrategy;
+import com.app.custom.FieldsVisibilityStrategy;
 
 public class ObjectMapper {
 
@@ -22,6 +23,9 @@ public class ObjectMapper {
 		
 		//property order strategy
 		jsonconfig.withPropertyOrderStrategy(PropertyOrderStrategy.REVERSE);
+		
+		//property visibility strategy setting
+		jsonconfig.withPropertyVisibilityStrategy(new FieldsVisibilityStrategy());
 		
 		return jsonconfig;
 	}

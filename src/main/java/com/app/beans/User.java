@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
+import com.app.mappers.ObjectMapper;
+
 public class User {
 	private int id;
 	private String name;
@@ -100,8 +102,12 @@ public class User {
 		// Json b will not pick this variable as getters & setters are private
 		// eventhough field is public as it respects getters and setters first
 		user.specialnumber = 890;
-
-		Jsonb jsonb = JsonbBuilder.create();
+		//Jsonb jsonb = JsonbBuilder.create();
+		
+		
+		Jsonb jsonb = JsonbBuilder.create(ObjectMapper.getObjectMapper());
+		//with property visibility strategy settingset to true all private info is available
+		
 		String result = jsonb.toJson(user);
 		System.out.println(result);
 	}
