@@ -1,5 +1,9 @@
 package com.app.beans;
 
+import javax.json.bind.annotation.JsonbPropertyOrder;
+import javax.json.bind.config.PropertyOrderStrategy;
+
+//@JsonbPropertyOrder(PropertyOrderStrategy.REVERSE)
 public class Product {
 
 	private int id;

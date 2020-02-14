@@ -2,6 +2,7 @@ package com.app.mappers;
 
 import javax.json.bind.JsonbConfig;
 import javax.json.bind.config.PropertyNamingStrategy;
+import javax.json.bind.config.PropertyOrderStrategy;
 
 import com.app.custom.CustomerNamingStrategy;
 
@@ -18,6 +19,10 @@ public class ObjectMapper {
 		
 		//property naming strategy by custom naming class
 		jsonconfig.withPropertyNamingStrategy(new CustomerNamingStrategy());
+		
+		//property order strategy
+		jsonconfig.withPropertyOrderStrategy(PropertyOrderStrategy.REVERSE);
+		
 		return jsonconfig;
 	}
 	
