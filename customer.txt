@@ -1,7 +1,7 @@
 
 {
-    "emailAddress": "test@gmail.com",
-    "id": 123,
-    "name": "Rachel Green",
-    "primeUser": true
+    "customerId_": 123,
+    "customerNamel_": "Rachel Green",
+    "emailAddress_": "test@gmail.com",
+    "primeUser_": true
 }

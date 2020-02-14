@@ -4,7 +4,8 @@ import javax.json.bind.annotation.JsonbProperty;
 
 public class Customer {
 
-	@JsonbProperty(value="id") private int customerId;
+	//@JsonbProperty(value="id") 
+	private int customerId;
 	 private String customerNamel;
 	private String emailAddress;
 	private boolean isPrimeUser;
@@ -29,13 +30,13 @@ public class Customer {
 		this.customerId = customerId;
 	}
 	//works only in deserialization
-	@JsonbProperty(value="name")
+	//@JsonbProperty(value="name")
 	public String getCustomerNamel() {
 		return customerNamel;
 	}
 	
 	//works only in deserialization 
-	@JsonbProperty(value="name")
+	//@JsonbProperty(value="name")
 	public void setCustomerNamel(String customerNamel) {
 		this.customerNamel = customerNamel;
 	}
