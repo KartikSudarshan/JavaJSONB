@@ -1,0 +1,7 @@
+
+{
+    "emailAddress": "test@gmail.com",
+    "id": 123,
+    "name": "Rachel Green",
+    "primeUser": true
+}
