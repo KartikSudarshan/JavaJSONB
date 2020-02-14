@@ -11,11 +11,15 @@ public class TestSimpleBean {
 
 	public static void main(String[]  args) {
 		//Create an instance of User
-		User user=new User();
-		user.setId(123);
-		user.setEmail("test@gmail.com");
-		user.setDate(new Date(456789));
-		user.setName("JsonTester");
+		//User user=new User();
+		/*
+		 * user.setId(123); user.setEmail("test@gmail.com"); user.setDate(new
+		 * Date(456789)); user.setName("JsonTester");
+		 */
+		
+		User user=new User(123,"Jsontester","test@gmail.com",new Date(456789));
+		//this will fail with Can't create instance of a class: class com.app.beans.User, No default constructor found
+		//Always ensure default constructor is added
 		
 		//Create JsonB instance from JsonbBuilder
 		Jsonb jsonb=JsonbBuilder.create();

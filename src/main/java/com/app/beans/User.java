@@ -4,6 +4,18 @@ import java.util.Date;
 
 public class User {
 
+	//Default constructor always required as this is the constructor used by JSON B
+	public User() {
+		
+	}
+	
+	public User(int id,String name,String email,Date date) {
+		this.date=date;
+		this.email=email;
+		this.name=name;
+		this.id=id;		
+	}
+	
 	private int id;
 	private String name;
 	private String email;
