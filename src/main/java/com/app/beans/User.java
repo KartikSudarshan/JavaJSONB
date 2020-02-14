@@ -13,7 +13,18 @@ public class User {
 	private long creditCardNumber;
 	public int cvs;
 	public int specialnumber;
-	
+
+	// Final Variable can be displayed in json with ease
+	public final String USER_TYPE = "admin";
+
+	// Static field is on class level so you will not have it on the user instance
+	// so does not appear
+	public static int counter = 0;
+
+	// Transient in Java is specifically going to be used in those fields for which
+	// serialization should NOT happen so it does not appear
+	public transient boolean isMember = false;
+
 	private int getSpecialnumber() {
 		return specialnumber;
 	}
@@ -77,16 +88,19 @@ public class User {
 		user.setEmail("test@gmail.com");
 		user.setDate(new Date(456789));
 		user.setName("JsonTester");
-		
-		//Json b will not pick this variable as getters & setters not present and variable is private
-		user.creditCardNumber=456789456;
-		
-		//Json b will pick this variable even though getters & setters not present , variable is public
-		user.cvs=456;
-		
-		//Json b will not pick this variable as getters & setters are private eventhough field is public as it respects getters and setters first
-		user.specialnumber=890;
-		
+
+		// Json b will not pick this variable as getters & setters not present and
+		// variable is private
+		user.creditCardNumber = 456789456;
+
+		// Json b will pick this variable even though getters & setters not present ,
+		// variable is public
+		user.cvs = 456;
+
+		// Json b will not pick this variable as getters & setters are private
+		// eventhough field is public as it respects getters and setters first
+		user.specialnumber = 890;
+
 		Jsonb jsonb = JsonbBuilder.create();
 		String result = jsonb.toJson(user);
 		System.out.println(result);
