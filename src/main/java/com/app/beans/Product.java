@@ -1,6 +1,7 @@
 package com.app.beans;
 
 import javax.json.bind.annotation.JsonbPropertyOrder;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.json.bind.config.PropertyOrderStrategy;
 
 //@JsonbPropertyOrder(PropertyOrderStrategy.REVERSE)
@@ -9,6 +10,7 @@ public class Product {
 	private int id;
 	private String name;
 	private String manufacturer;
+	//@JsonbTransient
 	private String shippingCompany;
 	private double price;
 	
@@ -50,11 +52,14 @@ public class Product {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-
+	//if only get is set with this property while deserialization happens shippingCompany will always be null
+	//@JsonbTransient 
 	public String getShippingCompany() {
 		return shippingCompany;
 	}
-
+	
+	//Serialization will be seen when not set on getter but during deserialization it wont be displayed
+	//@JsonbTransient 
 	public void setShippingCompany(String shippingCompany) {
 		this.shippingCompany = shippingCompany;
 	}
