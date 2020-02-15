@@ -1,0 +1,53 @@
+
+{
+    "orderId_": 199,
+    "orderDetails_": {
+        "totalAmmount_": 1763.863,
+        "shippingAddress_": {
+            "zipcode_": 91234,
+            "street_": "XYZ Avenue",
+            "country_": "USA",
+            "city_": "Los Angeles"
+        },
+        "products_": [
+            {
+                "shippingCompany_": "Good shippers",
+                "price_": 799.99,
+                "name_": "iphone8",
+                "manufacturer_": "Apple",
+                "id_": 1
+            },
+            {
+                "shippingCompany_": "Great shippers",
+                "price_": 236.873,
+                "name_": "Kitchen Cutlery",
+                "manufacturer_": "Clean Kitchens",
+                "id_": 2
+            },
+            {
+                "shippingCompany_": "ABC shipping",
+                "price_": 400.0,
+                "name_": "Whirlpool Washing machine",
+                "manufacturer_": "Whirpool",
+                "id_": 3
+            },
+            {
+                "shippingCompany_": null,
+                "price_": 300.0,
+                "name_": "Nike running shoes",
+                "manufacturer_": "Nike",
+                "id_": 4
+            },
+            null
+        ]
+    },
+    "orderDate_": "2018/08/01",
+    "deliveryDate_": "2018/08/10",
+    "customer_": {
+        "primeUser_": true,
+        "isPrimeUser_": true,
+        "emailAddress_": "test@gmail.com",
+        "customerNamel_": "Rachel Green",
+        "customerId_": 123
+    }
+}

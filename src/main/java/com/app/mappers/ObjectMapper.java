@@ -1,5 +1,7 @@
 package com.app.mappers;
 
+import java.util.Locale;
+
 import javax.json.bind.JsonbConfig;
 import javax.json.bind.config.PropertyNamingStrategy;
 import javax.json.bind.config.PropertyOrderStrategy;
@@ -29,6 +31,10 @@ public class ObjectMapper {
 		
 		//property nillable setting
 		jsonconfig.withNullValues(true);
+		
+		//property settings for time
+		jsonconfig.withDateFormat("yyyy/MM/dd", Locale.getDefault());
+		
 		
 		return jsonconfig;
 	}

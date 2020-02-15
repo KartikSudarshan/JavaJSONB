@@ -2,10 +2,13 @@ package com.app.beans;
 
 import java.time.LocalDate;
 
+import javax.json.bind.annotation.JsonbDateFormat;
+
 public class Order {
 
 	private OrderDetails orderDetails;
 	private int orderId;
+	//@JsonbDateFormat("dd.MM.yyyy")
 	private LocalDate orderDate;
 	private LocalDate deliveryDate;
 	private Customer customer;
