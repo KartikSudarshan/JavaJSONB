@@ -39,6 +39,9 @@ public class ObjectMapper {
 		//property for binary strategy
 		jsonconfig.withBinaryDataStrategy(BinaryDataStrategy.BASE_64);
 		
+		//property for iJson restrictions
+		jsonconfig.withStrictIJSON(Boolean.TRUE);
+		
 		return jsonconfig;
 	}
 	
