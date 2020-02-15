@@ -1,16 +1,23 @@
 package com.app.beans;
 
+import javax.json.bind.annotation.JsonbNillable;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbPropertyOrder;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.json.bind.config.PropertyOrderStrategy;
 
 //@JsonbPropertyOrder(PropertyOrderStrategy.REVERSE)
+
+//Allows Nul values to be serialized
+//@JsonbNillable
+
 public class Product {
 
 	private int id;
 	private String name;
 	private String manufacturer;
 	//@JsonbTransient
+	@JsonbProperty(nillable=true)
 	private String shippingCompany;
 	private double price;
 	

@@ -27,6 +27,9 @@ public class ObjectMapper {
 		//property visibility strategy setting
 		jsonconfig.withPropertyVisibilityStrategy(new FieldsVisibilityStrategy());
 		
+		//property nillable setting
+		jsonconfig.withNullValues(true);
+		
 		return jsonconfig;
 	}
 	
