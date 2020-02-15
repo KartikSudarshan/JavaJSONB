@@ -7,6 +7,7 @@ import javax.json.bind.config.BinaryDataStrategy;
 import javax.json.bind.config.PropertyNamingStrategy;
 import javax.json.bind.config.PropertyOrderStrategy;
 
+import com.app.custom.CustomerAdapter;
 import com.app.custom.CustomerNamingStrategy;
 import com.app.custom.FieldsVisibilityStrategy;
 
@@ -40,7 +41,10 @@ public class ObjectMapper {
 		jsonconfig.withBinaryDataStrategy(BinaryDataStrategy.BASE_64);
 		
 		//property for iJson restrictions
-		jsonconfig.withStrictIJSON(Boolean.TRUE);
+		//jsonconfig.withStrictIJSON(Boolean.TRUE);
+		
+		//property to set the customer adapters
+		jsonconfig.withAdapters(new CustomerAdapter());
 		
 		return jsonconfig;
 	}
