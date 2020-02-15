@@ -10,6 +10,8 @@ import javax.json.bind.config.PropertyOrderStrategy;
 import com.app.custom.CustomerAdapter;
 import com.app.custom.CustomerNamingStrategy;
 import com.app.custom.FieldsVisibilityStrategy;
+import com.app.custom.PersonDeserializer;
+import com.app.custom.PersonSerializer;
 
 public class ObjectMapper {
 
@@ -44,7 +46,11 @@ public class ObjectMapper {
 		//jsonconfig.withStrictIJSON(Boolean.TRUE);
 		
 		//property to set the customer adapters
-		jsonconfig.withAdapters(new CustomerAdapter());
+		//jsonconfig.withAdapters(new CustomerAdapter());
+		
+		//property for serializer
+		jsonconfig.withSerializers(new PersonSerializer());
+		jsonconfig.withDeserializers(new PersonDeserializer());
 		
 		return jsonconfig;
 	}
