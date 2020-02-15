@@ -2,16 +2,30 @@ package com.app.beans;
 
 import java.util.List;
 
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
+
 public class OrderDetails {
 
 	private List<Product> products;
 	private Address shippingAddress;
 	private double totalAmmount;
-	
+
 	public OrderDetails() {
+
+	}
+
+	@JsonbCreator
+	public OrderDetails(@JsonbProperty("products") List<Product> products, @JsonbProperty("city") String city,
+			@JsonbProperty("country") String country, @JsonbProperty("street") String street,
+			@JsonbProperty("zipcode") int zipcode, @JsonbProperty("totalAmmount") double totalAmmount) {
+
+		this.products=products;
+		this.totalAmmount=totalAmmount;
+		this.shippingAddress=new Address(street, city, country, zipcode);
 		
 	}
-	
+
 	public OrderDetails(List<Product> products, Address shippingAddress, double totalAmmount) {
 		super();
 		this.products = products;
@@ -48,8 +62,5 @@ public class OrderDetails {
 		return "OrderDetails [products=" + products + ", shippingAddress=" + shippingAddress + ", totalAmmount="
 				+ totalAmmount + "]";
 	}
-	
-	
-	
-	
+
 }
